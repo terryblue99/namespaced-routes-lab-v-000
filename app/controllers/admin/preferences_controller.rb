@@ -1,7 +1,7 @@
 class Admin::PreferencesController < ApplicationController
 
   def index
-    @preferences = Preference.all
+    @preferences = Preference.last
   end
 
 end
