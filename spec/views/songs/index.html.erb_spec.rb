@@ -12,7 +12,7 @@ RSpec.describe 'songs/index' do
   end
 
   it 'calls the helper to display the artist' do
-    @song_sort = Preference.first.song_sort_order
+    @song_sort = Preference.last.song_sort_order
     render
     expect(rendered).to match /They Might Be Giants/
   end
