@@ -6,9 +6,9 @@ RSpec.describe SongsController do
     Song.destroy_all
     Artist.destroy_all
     Preference.destroy_all
+    @prefs = Preference.create(song_sort_order: 'ASC', artist_sort_order: 'DESC', allow_create_artists: true, allow_create_songs: true)
     @artist = Artist.create(name: "Garth Brooks")
     @song = @artist.songs.create(title: "I'm def not Chris Gaines, Everyone haha what are you talking about?")
-    @song_sort = Preference.create(song_sort_order: 'asc', artist_sort_order: 'asc', allow_create_artists: true, allow_create_songs: true)
   end
 
   describe "GET index" do
